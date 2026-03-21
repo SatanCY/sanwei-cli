@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.sanwei</groupId>
+        <artifactId>sanwei-framework</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>sanwei-spring-boot-starter-security</artifactId>
+    <packaging>jar</packaging>
+
+    <name>${project.artifactId}</name>
+    <description>
+        1. security：用户的认证、权限的校验，实现「谁」可以做「什么事」
+        2. operatelog：操作日志，实现「谁」在「什么时间」对「什么」做了「什么事」
+    </description>
+
+    <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>com.sanwei</groupId>-->
+<!--            <artifactId>sanwei-common</artifactId>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; Spring 核心 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-aop</artifactId>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; Web 相关 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>cn.iocoder.boot</groupId>-->
+<!--            <artifactId>yudao-spring-boot-starter-web</artifactId>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; spring boot 配置所需依赖 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-configuration-processor</artifactId>-->
+<!--            <optional>true</optional>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-security</artifactId>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; 工具类相关 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.google.guava</groupId>-->
+<!--            <artifactId>guava</artifactId>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            &lt;!&ndash; Spring Boot 通用操作日志组件，基于注解实现 &ndash;&gt;-->
+<!--            &lt;!&ndash; 此组件解决的问题是：「谁」在「什么时间」对「什么」做了「什么事」 &ndash;&gt;-->
+<!--            <groupId>io.github.mouzt</groupId>-->
+<!--            <artifactId>bizlog-sdk</artifactId>-->
+<!--        </dependency>-->
+    </dependencies>
+
+</project>
