@@ -16,27 +16,27 @@
     <description>Web 框架，全局异常、API 日志、脱敏、错误码等</description>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>com.sanwei</groupId>-->
-<!--            <artifactId>sanwei-common</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.sanwei</groupId>
+            <artifactId>sanwei-common</artifactId>
+        </dependency>
 
-<!--        &lt;!&ndash; Web 相关 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-web</artifactId>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; spring boot 配置所需依赖 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-configuration-processor</artifactId>-->
-<!--            <optional>true</optional>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.aspectj</groupId>-->
-<!--            <artifactId>aspectjweaver</artifactId>-->
-<!--            <scope>provided</scope> &lt;!&ndash; 解决工具类 SpringExpressionUtils 加载的时候访问不到 org.aspectj.lang.JoinPoint 问题 &ndash;&gt;-->
-<!--        </dependency>-->
+        <!-- Web 相关 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- spring boot 配置所需依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <scope>provided</scope> <!-- 解决工具类 SpringExpressionUtils 加载的时候访问不到 org.aspectj.lang.JoinPoint 问题 -->
+        </dependency>
 
 <!--        <dependency>-->
 <!--            <groupId>com.github.xiaoymin</groupId>-->

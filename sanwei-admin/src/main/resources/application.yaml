@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: sanwei-admin
+
+  profiles:
+    active: local

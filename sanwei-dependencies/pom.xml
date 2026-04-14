@@ -84,6 +84,13 @@
         <dependencies>
             <!-- 统一依赖管理 -->
             <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-bom</artifactId>
+                <version>${netty.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring.boot.version}</version>
@@ -100,17 +107,18 @@
             </dependency>
 
             <!-- Web 相关 -->
-<!--            <dependency>-->
-<!--                <groupId>com.sanwei</groupId>-->
-<!--                <artifactId>sanwei-spring-boot-starter-web</artifactId>-->
-<!--                <version>${reversion}</version>-->
-<!--            </dependency>-->
+            <dependency>
+                <groupId>com.sanwei</groupId>
+                <artifactId>sanwei-spring-boot-starter-web</artifactId>
+                <version>${revision}</version>
+            </dependency>
 
-<!--            <dependency>-->
-<!--                <groupId>com.sanwei</groupId>-->
-<!--                <artifactId>sanwei-spring-boot-starter-security</artifactId>-->
-<!--                <version>${reversion}</version>-->
-<!--            </dependency>-->
+            <!-- Security相关 -->
+            <dependency>
+                <groupId>com.sanwei</groupId>
+                <artifactId>sanwei-spring-boot-starter-security</artifactId>
+                <version>${revision}</version>
+            </dependency>
 
             <!-- DB 相关 -->
             <dependency>
@@ -138,11 +146,73 @@
             <!-- Test 测试相关 -->
 
             <!-- 工具类相关 -->
-<!--            <dependency>-->
-<!--                <groupId>com.sanwei</groupId>-->
-<!--                <artifactId>sanwei-common</artifactId>-->
-<!--                <version>${reversion}</version>-->
-<!--            </dependency>-->
+            <dependency>
+                <groupId>com.sanwei</groupId>
+                <artifactId>sanwei-common</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springdoc</groupId>
+                        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId> <!-- use mapstruct-jdk8 for Java 8 or higher -->
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-jdk8</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-5.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.dromara.hutool</groupId>
+                <artifactId>hutool-extra</artifactId>
+                <version>${hutool-6.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version> <!-- 解决 CVE-2025-48924 漏洞 -->
+            </dependency>
 
         </dependencies>
 

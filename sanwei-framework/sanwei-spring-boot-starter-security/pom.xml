@@ -19,28 +19,28 @@
     </description>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>com.sanwei</groupId>-->
-<!--            <artifactId>sanwei-common</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.sanwei</groupId>
+            <artifactId>sanwei-common</artifactId>
+        </dependency>
 
-<!--        &lt;!&ndash; Spring 核心 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-aop</artifactId>-->
-<!--        </dependency>-->
+        <!-- Spring 核心 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
 
-<!--        &lt;!&ndash; Web 相关 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>cn.iocoder.boot</groupId>-->
-<!--            <artifactId>yudao-spring-boot-starter-web</artifactId>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; spring boot 配置所需依赖 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-configuration-processor</artifactId>-->
-<!--            <optional>true</optional>-->
-<!--        </dependency>-->
+        <!-- Web 相关 -->
+        <dependency>
+            <groupId>com.sanwei</groupId>
+            <artifactId>sanwei-spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- spring boot 配置所需依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
 
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.boot</groupId>-->

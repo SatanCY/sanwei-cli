@@ -12,4 +12,18 @@
     <artifactId>sanwei-system</artifactId>
     <description>系统模块</description>
 
+    <dependencies>
+
+        <!-- web 相关 -->
+        <dependency>
+            <groupId>com.sanwei</groupId>
+            <artifactId>sanwei-spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sanwei</groupId>
+            <artifactId>sanwei-spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>
