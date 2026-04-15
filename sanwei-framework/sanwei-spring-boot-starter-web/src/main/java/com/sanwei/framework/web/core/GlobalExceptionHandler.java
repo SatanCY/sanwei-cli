@@ -2,18 +2,19 @@ package com.sanwei.framework.web.core;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
-import exception.ServiceException;
+import com.sanwei.framework.common.exception.ServiceException;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import pojo.CommonResult;
+import com.sanwei.framework.common.pojo.CommonResult;
 
 import java.util.List;
 
-import static exception.enums.GlobalErrorCodeConstants.*;
+import static com.sanwei.framework.common.exception.enums.GlobalErrorCodeConstants.*;
 
 /**
  * GlobalExceptionHandler
@@ -56,5 +57,20 @@ public class GlobalExceptionHandler {
     public CommonResult<?> serviceExceptionHandler(ServiceException exception) {
         log.warn("[serviceExceptionHandler]", exception);
         return CommonResult.error(exception.getCode(), exception.getMessage());
+    }
+
+    /**
+     * 处理系统异常，兜底处理所有的异常
+     */
+    @ExceptionHandler(value = Exception.class)
+    public CommonResult<?> defaultExceptionHandler(HttpServletRequest request, Throwable exception) {
+        // 特殊情况，ServiceException 异常，直接返回
+        if (exception.getCause() != null && exception.getCause() instanceof ServiceException) {
+            return serviceExceptionHandler((ServiceException) exception);
+        }
+
+        // 处理异常
+        log.error("[defaultExceptionHandler]", exception);
+        return CommonResult.error(INTERNAL_SERVER_ERROR.getCode(), INTERNAL_SERVER_ERROR.getMsg());
     }
 }

@@ -1,6 +1,8 @@
 package com.sanwei.framework.web.config;
 
+import com.sanwei.framework.web.core.GlobalExceptionHandler;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.context.annotation.Bean;
 
 /**
  * SanweiWebAutoConfiguration
@@ -10,4 +12,9 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
  */
 @AutoConfiguration
 public class SanweiWebAutoConfiguration {
+
+    @Bean
+    public GlobalExceptionHandler globalExceptionHandler() {
+        return new GlobalExceptionHandler();
+    }
 }

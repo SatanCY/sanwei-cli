@@ -1,7 +1,7 @@
-package pojo;
+package com.sanwei.framework.common.pojo;
 
-import exception.ErrorCode;
-import exception.enums.GlobalErrorCodeConstants;
+import com.sanwei.framework.common.exception.ErrorCode;
+import com.sanwei.framework.common.exception.enums.GlobalErrorCodeConstants;
 import lombok.Data;
 
 /**

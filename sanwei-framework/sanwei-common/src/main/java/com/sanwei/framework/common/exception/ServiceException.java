@@ -1,4 +1,4 @@
-package exception;
+package com.sanwei.framework.common.exception;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

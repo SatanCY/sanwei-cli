@@ -13,6 +13,7 @@
         <module>sanwei-common</module>
         <module>sanwei-spring-boot-starter-web</module>
         <module>sanwei-spring-boot-starter-security</module>
+        <module>sanwei-spring-boot-starter-mybatis</module>
     </modules>
 
     <artifactId>sanwei-framework</artifactId>

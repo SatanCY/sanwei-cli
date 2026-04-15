@@ -4,3 +4,8 @@ spring:
 
   profiles:
     active: local
+
+sanwei:
+  info:
+    version: 1.0.0
+    base-package: com.sanwei
