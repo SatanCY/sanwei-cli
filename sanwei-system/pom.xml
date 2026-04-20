@@ -35,6 +35,11 @@
             <groupId>com.sanwei</groupId>
             <artifactId>sanwei-spring-boot-starter-mybatis</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.sanwei</groupId>
+            <artifactId>sanwei-spring-boot-starter-redis</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

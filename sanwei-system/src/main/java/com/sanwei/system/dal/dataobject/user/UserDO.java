@@ -12,7 +12,7 @@ import lombok.*;
  * @author caiyang
  * @date 2026/4/15
  */
-@TableName("system_users")
+@TableName(value = "system_users", autoResultMap = true)
 @Data
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor

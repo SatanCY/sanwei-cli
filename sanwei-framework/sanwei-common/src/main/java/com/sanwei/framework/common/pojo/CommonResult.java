@@ -4,6 +4,8 @@ import com.sanwei.framework.common.exception.ErrorCode;
 import com.sanwei.framework.common.exception.enums.GlobalErrorCodeConstants;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * CommonResult
  * 通用返回
@@ -11,7 +13,7 @@ import lombok.Data;
  * @date 2026/4/14
  */
 @Data
-public class CommonResult<T> {
+public class CommonResult<T> implements Serializable {
 
     /**
      * 错误码 0-成功

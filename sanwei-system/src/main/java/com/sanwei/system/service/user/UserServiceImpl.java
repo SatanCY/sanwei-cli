@@ -1,6 +1,9 @@
 package com.sanwei.system.service.user;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.sanwei.system.controller.auth.vo.AuthRegisterReqVO;
+import com.sanwei.system.controller.user.vo.UserSaveReqVO;
 import com.sanwei.system.dal.dataobject.user.UserDO;
 import com.sanwei.system.dal.mysql.user.UserMapper;
 import jakarta.annotation.Resource;
@@ -25,9 +28,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public Long createUser(UserDO userDO) {
-        userMapper.insert(userDO);
-        return userDO.getId();
+    public Long createUser(UserSaveReqVO createReqVO) {
+        UserDO user = BeanUtil.toBean(createReqVO, UserDO.class);
+        user.setPassword(encodePassword(createReqVO.getPassword()));
+        userMapper.insert(user);
+        return user.getId();
     }
 
     @Override
@@ -40,6 +45,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserDO> listUsers() {
         return userMapper.selectList(new LambdaQueryWrapper<>());
+    }
+
+    @Override
+    public Long registerUser(AuthRegisterReqVO registerReqVO) {
+        return 0L;
     }
 
     /**

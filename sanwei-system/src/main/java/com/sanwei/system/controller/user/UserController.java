@@ -1,12 +1,15 @@
 package com.sanwei.system.controller.user;
 
-import cn.hutool.core.collection.ListUtil;
 import com.sanwei.framework.common.exception.ErrorCode;
 import com.sanwei.framework.common.exception.ServiceException;
+import com.sanwei.system.controller.user.vo.UserSaveReqVO;
 import com.sanwei.system.dal.dataobject.user.UserDO;
 import com.sanwei.system.service.user.UserService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
+import jakarta.annotation.security.PermitAll;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import com.sanwei.framework.common.pojo.CommonResult;
 import jakarta.validation.Valid;
@@ -23,15 +26,16 @@ import java.util.Objects;
 @Tag(name = "后台管理-用户模块")
 @RestController
 @RequestMapping("/system/user")
+@Validated
 public class UserController {
 
     @Resource
     private UserService userService;
 
     @PostMapping("/createUser")
-    @ResponseBody
-    public CommonResult<Long> createUser(@Valid @RequestBody UserDO userDO) {
-        Long userId = userService.createUser(userDO);
+    @Operation(summary = "新增用户")
+    public CommonResult<Long> createUser(@Valid @RequestBody UserSaveReqVO reqVO) {
+        Long userId = userService.createUser(reqVO);
         if (Objects.isNull(userId)) {
             throw new ServiceException(new ErrorCode(300, "创建用户信息出错"));
         }
@@ -39,7 +43,7 @@ public class UserController {
     }
 
     @GetMapping("/listUsers")
-    @ResponseBody
+    @Operation(summary = "查询用户列表")
     public CommonResult<List<UserDO>> listUsers() {
         return CommonResult.success(userService.listUsers());
     }

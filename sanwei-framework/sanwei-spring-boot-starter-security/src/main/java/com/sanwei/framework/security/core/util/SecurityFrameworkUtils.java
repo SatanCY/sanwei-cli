@@ -2,10 +2,16 @@ package com.sanwei.framework.security.core.util;
 
 import cn.hutool.core.util.StrUtil;
 import com.sanwei.framework.security.core.LoginUser;
+import jakarta.annotation.Nullable;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.WebAuthenticationDetails;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+
+import java.util.Collections;
 
 /**
  * SecurityFrameworkUtils
@@ -60,5 +66,28 @@ public class SecurityFrameworkUtils {
             return null;
         }
         return authentication.getPrincipal() instanceof LoginUser ? (LoginUser) authentication.getPrincipal() : null;
+    }
+
+    /**
+     * 获取当前用户的编号
+     * @return 当前用户编号
+     */
+    @Nullable
+    public static Long getLoginUserId() {
+        LoginUser loginUser = getLoginUser();
+        return loginUser != null ? loginUser.getId() : null;
+    }
+
+    public static void setLoginUser(LoginUser loginUser, HttpServletRequest request) {
+        // 创建 Authentication，并设置到上下文里
+        Authentication authentication = buildAuthentication(loginUser, request);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+    }
+
+    private static Authentication buildAuthentication(LoginUser loginUser, HttpServletRequest request) {
+        // 创建 UsernamePasswordAuthenticationToken 对象
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(loginUser, null, Collections.emptyList());
+        authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+        return authenticationToken;
     }
 }

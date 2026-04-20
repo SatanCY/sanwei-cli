@@ -1,0 +1,2 @@
+com.sanwei.framework.security.config.SanweiWebSecurityConfigurerAdapter
+com.sanwei.framework.security.config.SanweiSecurityAutoConfiguration

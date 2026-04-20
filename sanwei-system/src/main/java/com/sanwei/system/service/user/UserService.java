@@ -1,5 +1,7 @@
 package com.sanwei.system.service.user;
 
+import com.sanwei.system.controller.auth.vo.AuthRegisterReqVO;
+import com.sanwei.system.controller.user.vo.UserSaveReqVO;
 import com.sanwei.system.dal.dataobject.user.UserDO;
 
 import java.util.List;
@@ -14,10 +16,10 @@ public interface UserService {
 
     /**
      * 创建用户
-     * @param userDO 用户实体类
+     * @param createReqVO 用户 Request VO
      * @return 用户ID
      */
-    Long createUser(UserDO userDO);
+    Long createUser(UserSaveReqVO createReqVO);
 
     /**
      * 根据用户名称查询用户
@@ -31,4 +33,12 @@ public interface UserService {
      * @return 用户列表
      */
     List<UserDO> listUsers();
+
+    /**
+     * 注册用户
+     *
+     * @param registerReqVO 用户信息
+     * @return 用户编号
+     */
+    Long registerUser(AuthRegisterReqVO registerReqVO);
 }
